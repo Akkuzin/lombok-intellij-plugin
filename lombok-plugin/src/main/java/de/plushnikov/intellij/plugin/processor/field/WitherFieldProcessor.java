@@ -1,6 +1,7 @@
 package de.plushnikov.intellij.plugin.processor.field;
 
 import com.intellij.lang.java.JavaLanguage;
+import com.intellij.openapi.fileTypes.StdFileTypes;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiClass;
@@ -168,7 +169,7 @@ public class WitherFieldProcessor extends AbstractFieldProcessor {
           .withNavigationElement(psiField)
           .withModifier(methodModifier);
 
-      final LombokLightParameter methodParameter = new LombokLightParameter(psiFieldName, psiFieldType, result, JavaLanguage.INSTANCE);
+      final LombokLightParameter methodParameter = new LombokLightParameter(psiFieldName, psiFieldType, result, StdFileTypes.JAVA.getLanguage());
       copyAnnotations(psiField, methodParameter.getModifierList(), LombokUtils.NON_NULL_PATTERN, LombokUtils.NULLABLE_PATTERN, LombokUtils.DEPRECATED_PATTERN);
       result.withParameter(methodParameter);
 

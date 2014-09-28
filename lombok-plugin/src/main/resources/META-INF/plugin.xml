@@ -36,13 +36,6 @@
     <renameHandler implementation="de.plushnikov.intellij.plugin.extension.LombokElementRenameHandler" order="FIRST"/>
 
     <daemon.highlightInfoFilter implementation="de.plushnikov.intellij.plugin.extension.LombokHighlightErrorFilter"/>
-
-    <fileTypeFactory implementation="de.plushnikov.intellij.plugin.language.LombokConfigFileTypeFactory"/>
-    <lang.parserDefinition language="Lombok.Config" implementationClass="de.plushnikov.intellij.plugin.language.LombokConfigParserDefinition"/>
-    <lang.syntaxHighlighterFactory key="Lombok.Config" implementationClass="de.plushnikov.intellij.plugin.language.LombokConfigSyntaxHighlighterFactory"/>
-    <colorSettingsPage implementation="de.plushnikov.intellij.plugin.language.LombokConfigColorSettingsPage"/>
-    <completion.contributor language="Lombok.Config" implementationClass="de.plushnikov.intellij.plugin.language.LombokConfigCompletionContributor"/>
-    <lang.commenter language="Lombok.Config" implementationClass="de.plushnikov.intellij.plugin.language.LombokConfigCommentor"/>
   </extensions>
 
   <extensions defaultExtensionNs="Lombook Plugin">
@@ -185,7 +178,6 @@
 				    <li>Fixed issue 109(on GoogleCode): Intellij freezes regularly when the lombok plugin is enabled</li>
 				    <li>Fixed issue 106(on GoogleCode): Static methods annotated with @Builder are not recognized</li>
 				    <li>Updated to lombok changes: canEqual (of @EqualsAndHashCode fame) should be protected instead of public.</li>
-				    <li>Basic autocompletion and highlighting for lombok.config files</li>
 				</ol>
 			</li>
 		<li>0.8.7
